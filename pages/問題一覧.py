@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image 
 
-x = 6  #←問題数の合計を入力！　問題が増えたら、変更を！
+x = 20  #←問題数の合計を入力！　問題が増えたら、変更を！
 
 st.title("問題一覧")
 
