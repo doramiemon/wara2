@@ -10,8 +10,11 @@ zikan = 900 # 制限時間を秒換算で入力！
 st.title("積分タイムアタック")
 st.write('問題数は、８題で、制限時間は、15分です。最後の問題のあとに、残りの制限時間が表示されています。')
 
-numbers = [random.randint(1, x) for i in range(mondai_su)]
+@st.cache
+def generate_random_list():
+    return random.sample(range(1, x+1), mondai_su)
 
+numbers = generate_random_list()
 
 
 for n in range(0,mondai_su):
@@ -27,7 +30,6 @@ stop_button = st.button('解き終えた')
 for i in range(900, -1, -1):
     if stop_button:
         st.write('解答を表示します')
-        st.balloons()
         break
 
     m, s = divmod(i, 60)
@@ -42,9 +44,6 @@ for n in range(0,mondai_su):
     expander = st.expander('解答'+str(numbers[n]))
     expander.image(image2,use_column_width=True)
 
+""""
+システム上、一日に一回問題が入れ替わります。
 """
-もう一度別の問題で、タイムアタックを行う場合は、urlから再びこのサイトに入り直してください
-"""
-
-
-
