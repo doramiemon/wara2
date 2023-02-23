@@ -30,6 +30,7 @@ stop_button = st.button('解き終えた')
 for i in range(900, -1, -1):
     if stop_button:
         st.write('解答を表示します')
+        st.balloons()
         break
 
     m, s = divmod(i, 60)
